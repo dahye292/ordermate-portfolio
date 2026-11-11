@@ -263,7 +263,7 @@ footer summary{cursor:pointer;font-weight:600;color:var(--ink)}
   <div class="wrap">
     <a class="logo" href="#top">Order<b>Mate</b></a>
     <nav aria-label="섹션">
-      <a href="#problem">문제</a><a href="#how">작동 방식</a><a href="#demo">데모</a><a href="#bench">실측</a><a href="#roi">효과</a><a href="#pricing">요금</a>
+      <a href="#problem">문제</a><a href="#how">작동 방식</a><a href="#demo">데모</a><a href="#bench">실측</a><a href="#roi">효과</a><a href="#market">시장</a>
     </nav>
   </div>
 </header>
@@ -300,13 +300,13 @@ footer summary{cursor:pointer;font-weight:600;color:var(--ink)}
 
   <section id="problem"><div class="wrap">
     <div class="head">
-      <h2>일손은 줄고 FAX는 그대로입니다. <span>AI를 어디에 쓸지 모르는 회사가 가장 많습니다.</span></h2>
+      <h2>일손은 줄고 FAX는 그대로입니다. <span>중소기업은 AI 활용에서도 뒤처져 있습니다.</span></h2>
     </div>
     <div class="stats">
       <div><b class="num">427<small>건</small></b><p>2025년 인력 부족 도산. 77%가 10인 미만 기업.</p><span class="src">데이코쿠데이터뱅크</span></div>
-      <div><b class="num">81<small>%</small></b><p>FAX·전화 주문에 한계를 느끼는 도매업체.</p><span class="src">타노무·인포마트 2026.3</span></div>
-      <div><b class="num">35.6<small>%</small></b><p>AI 도입 장벽 1위 "활용 장면을 모르겠다".</p><span class="src">상공중금 2026.1</span></div>
-      <div><b class="num">11<small>분</small></b><p>양식이 제각각인 FAX 주문서 1건 처리 시간.</p><span class="src">디지털고릴라 사례</span></div>
+      <div><b class="num">81<small>%</small></b><p>FAX·전화 주문 처리에 한계를 느끼는 도매업체(142개사 조사).</p><span class="src">타노무·인포마트 2026.3</span></div>
+      <div><b class="num">34.3<small>%</small></b><p>생성 AI 활용 방침이 있는 중소기업. 대기업은 55.7%.</p><span class="src">총무성 정보통신백서 2025</span></div>
+      <div><b class="num">11<small>분</small></b><p>한 식품 제조사의 FAX 주문서 1건 처리 시간. AI 도입 후 약 5분.</p><span class="src">디지털고릴라 사례</span></div>
     </div>
     <div class="target">
       <h3>대상 고객</h3>
@@ -321,17 +321,7 @@ footer summary{cursor:pointer;font-weight:600;color:var(--ink)}
     <div class="cols3">
       <div><h3>FAX 자동 수신</h3><p>기존 복합기의 메일 전송으로 받습니다. 거래처가 바꿀 것은 없습니다.</p></div>
       <div><h3>읽고 상품과 매칭</h3><p>양식과 관계없이 품명·수량을 뽑아 상품 마스터와 맞추고 신뢰도를 매깁니다.</p></div>
-      <div><h3>애매한 줄만 확인</h3><p>고친 내용은 거래처별 사전에 쌓여 다음 FAX부터 자동으로 확정됩니다.</p></div>
-    </div>
-    <div class="tbl-box">
-      <table class="cmp">
-        <thead><tr><th></th><th>거래처 변경</th><th>양식 등록</th><th>상품 마스터 대조</th><th>초기 비용</th></tr></thead>
-        <tbody>
-          <tr><td>EDI·웹 발주</td><td class="n">거래처가 바꿔야 함</td><td class="y">필요 없음</td><td class="y">자동</td><td class="n">높음</td></tr>
-          <tr><td>기존 AI-OCR</td><td class="y">필요 없음</td><td class="n">양식마다 설정</td><td class="n">대부분 사람이 함</td><td>월 1만~20만엔</td></tr>
-          <tr class="me"><td>OrderMate</td><td class="y">필요 없음</td><td class="y">필요 없음</td><td class="y">자동 · 사전으로 학습</td><td class="y">0엔</td></tr>
-        </tbody>
-      </table>
+      <div><h3>애매한 줄만 확인</h3><p>고친 내용을 거래처별 사전에 저장해 다음 FAX부터 자동으로 확정합니다. 이 부분은 지금 데모로만 구현되어 있습니다.</p></div>
     </div>
   </div></section>
 
@@ -404,16 +394,16 @@ footer summary{cursor:pointer;font-weight:600;color:var(--ink)}
 
   <section id="roi"><div class="wrap">
     <div class="head">
-      <h2>우리 회사 숫자로 계산해 보세요. <span>근거 없는 값은 가설로 표시했습니다.</span></h2>
+      <h2>우리 회사 숫자로 계산해 보세요. <span>기본값은 공개 사례와 정부 통계를 따랐습니다.</span></h2>
     </div>
     <div class="roi">
       <form class="fields" id="roiForm" novalidate>
-        <div class="field"><label for="faxPerDay">하루 FAX 주문 수<small>대상 고객 기준</small></label><input id="faxPerDay" type="number" min="0" step="1" value="30" inputmode="numeric"></div>
-        <div class="field"><label for="minPerFax">현재 1건 처리 시간(분)<small>공개 사례 1건 · 약 11분</small></label><input id="minPerFax" type="number" min="0" step="0.5" value="11"></div>
-        <div class="field"><label for="reviewMin">도입 후 1건 확인 시간(분)<small>가설 · 파일럿에서 측정</small></label><input id="reviewMin" type="number" min="0" step="0.5" value="2"></div>
+        <div class="field"><label for="faxPerDay">하루 FAX 주문 수<small>대상 고객 가정</small></label><input id="faxPerDay" type="number" min="0" step="1" value="30" inputmode="numeric"></div>
+        <div class="field"><label for="minPerFax">도입 전 1건 처리 시간(분)<small>식품 제조사 사례 · 약 11분</small></label><input id="minPerFax" type="number" min="0" step="0.5" value="11"></div>
+        <div class="field"><label for="reviewMin">도입 후 1건 처리 시간(분)<small>같은 사례 · 약 5분</small></label><input id="reviewMin" type="number" min="0" step="0.5" value="5"></div>
         <div class="field"><label for="wage">시급(엔)<small>파트타임 평균 1,394엔 (후생노동성 2025)</small></label><input id="wage" type="number" min="0" step="10" value="1394"></div>
         <div class="field"><label for="days">월 영업일</label><input id="days" type="number" min="0" step="1" value="22"></div>
-        <div class="field"><label for="price">월 요금(엔)<small>스탠더드 플랜</small></label><input id="price" type="number" min="0" step="1000" value="19800"></div>
+        <div class="field"><label for="price">월 서비스 요금(엔)<small>기존 서비스 최저 요금 (注文書係)</small></label><input id="price" type="number" min="0" step="100" value="9800"></div>
       </form>
       <div class="result">
         <div class="kpis">
@@ -431,19 +421,19 @@ footer summary{cursor:pointer;font-weight:600;color:var(--ink)}
     </div>
   </div></section>
 
-  <section id="pricing"><div class="wrap">
+  <section id="market"><div class="wrap">
     <div class="head">
-      <h2>소형 서비스 가격으로 마스터 대조까지. <span>읽기 중심 서비스와 초기 100만 엔 구축형 사이의 빈자리를 노립니다.</span></h2>
+      <h2>같은 문제를 푸는 서비스는 이미 있습니다. <span>그래서 가격보다 확인 없이 통과하는 오답을 줄이는 데 초점을 둡니다.</span></h2>
     </div>
     <div class="plans">
-      <div class="plan"><h3>파일럿</h3><div class="p">¥0 <small>2주</small></div><ul><li>실제 FAX로 정확도·시간 측정</li><li>품의(稟議)용 효과 보고서</li></ul></div>
-      <div class="plan main"><h3>스탠더드</h3><div class="p">¥19,800 <small>월</small></div><ul><li>월 1,000장, 초기 비용 0엔</li><li>마스터 대조와 거래처 사전</li><li>CSV 연동</li></ul></div>
-      <div class="plan"><h3>프로</h3><div class="p">¥39,800 <small>월</small></div><ul><li>월 3,000장</li><li>판매관리 소프트 API 연동</li><li>거래처별 기준값</li></ul></div>
+      <div class="plan"><h3>실제 도입 사례</h3><div class="p">11분 → 5분</div><ul><li>식품 제조사 1곳, 월 FAX 약 1,500장</li><li>AI 도입 후 1건 처리 시간 약 6분 단축</li></ul></div>
+      <div class="plan"><h3>기존 서비스</h3><div class="p">¥9,800 <small>월부터</small></div><ul><li>注文書係: 월 500장, 품목 마스터 대조와 CSV 출력</li><li>수요는 있고, 가격만으로는 차별화가 어렵습니다</li></ul></div>
+      <div class="plan main"><h3>OrderMate의 초점</h3><div class="p">오답 0건</div><ul><li>사람 확인 없이 통과한 오답을 핵심 지표로 측정</li><li>같은 테스트로 기존 서비스와 비교하는 것이 다음 과제</li></ul></div>
     </div>
-    <p class="cap">요금은 경쟁 서비스 공개 가격을 기준으로 한 가설입니다. 파일럿 인터뷰로 지불 의향을 확인합니다.</p>
+    <p class="cap">요금은 아직 정하지 않았습니다. 실제 FAX로 기존 서비스와 같은 조건에서 비교한 뒤 정합니다.</p>
     <div class="road">
       <div><span class="when">지금</span><h3>해커톤 프로토타입</h3><ul><li>합성 FAX 실측 43/45</li><li>실시간 추출과 확인 화면</li><li>ROI 모델</li></ul></div>
-      <div><span class="when">다음 2주</span><h3>파일럿 3개사</h3><ul><li>실제 FAX 50장 이상으로 재측정</li><li>확인 시간 2분 가설 측정</li><li>지불 의향 확인</li></ul></div>
+      <div><span class="when">다음 2주</span><h3>파일럿</h3><ul><li>실제 FAX 약 120장으로 재측정</li><li>도입 후 처리 시간 측정</li><li>기존 서비스와 같은 테스트로 비교</li></ul></div>
       <div><span class="when">그 후</span><h3>유료 전환과 확장</h3><ul><li>판매관리 API 연동</li><li>전화 주문 음성 입력</li><li>청구·재고 문의로 확대</li></ul></div>
     </div>
   </div></section>
@@ -457,12 +447,9 @@ footer summary{cursor:pointer;font-weight:600;color:var(--ink)}
       <li><a href="https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r07/html/nd112220.html" target="_blank" rel="noopener">총무성 『令和7年版 情報通信白書』</a></li>
       <li><a href="https://newswitch.jp/p/48034" target="_blank" rel="noopener">데이코쿠데이터뱅크 인력 부족 도산 2025 (뉴스위치)</a></li>
       <li><a href="https://www.logi-today.com/924582" target="_blank" rel="noopener">타노무·인포마트 도매업체 DX 실태 조사 2026.3 (LOGI-TODAY)</a></li>
-      <li><a href="https://0120.co.jp/blog/ai-training-124/" target="_blank" rel="noopener">상공중금 중소기업 AI 도입 장벽 조사 2026.1 (2차 인용)</a></li>
-      <li><a href="https://www.ipa.go.jp/digital/chousa/dx-trend/dx-trend-2025.html" target="_blank" rel="noopener">IPA 『DX動向2025』</a></li>
-      <li><a href="https://digital-gorilla.co.jp/ai-lab/?p=3565" target="_blank" rel="noopener">디지털고릴라 AI-LAB: FAX 주문서 1건 약 11분</a></li>
+      <li><a href="https://digital-gorilla.co.jp/ai-lab/?p=3565" target="_blank" rel="noopener">디지털고릴라 AI-LAB: 식품 제조사 FAX 주문 1건 약 11분에서 약 5분</a></li>
       <li><a href="https://www.mhlw.go.jp/wp/hakusyo/roudou/26/dl/26-1-1-3_02.pdf" target="_blank" rel="noopener">후생노동성 『労働経済の分析』: 파트타임 시급 1,394엔</a></li>
-      <li><a href="https://ai-revolution.co.jp/media/automate-wholesale-orders/" target="_blank" rel="noopener">AI레볼루션: 도매 주문 자동화 비용대</a></li>
-      <li><a href="https://www.itreview.jp/products/gakari/price" target="_blank" rel="noopener">ITreview: 注文書係 요금</a></li>
+      <li><a href="https://www.itreview.jp/products/gakari/price" target="_blank" rel="noopener">ITreview: 注文書係 요금과 기능</a></li>
     </ol>
   </details>
   <p>OrderMate · 해커톤 제출용 포트폴리오. 테스트 FAX는 직접 만든 합성 이미지입니다.</p>
@@ -645,7 +632,7 @@ window.OM_BENCH=[{"id": "01", "label": "깔끔한 인쇄 표", "png": "iVBORw0KG
     $("vAfter").textContent = after.toFixed(1)+"h";
     const sheets = v.faxPerDay*v.days, need = sheets && v.wage ? v.price/(v.wage/60)/sheets : 0;
     $("kBreak").innerHTML = sheets && v.wage
-      ? `<b>손익분기:</b> 1장당 <b>${need.toFixed(1)}분</b>만 줄이면 요금을 회수합니다. 확인 시간이 가설(${v.reviewMin}분)보다 길어져 <b>${Math.max(0,v.minPerFax-need).toFixed(1)}분</b>이 걸려도 손해가 아닙니다.`
+      ? `<b>손익분기:</b> 1장당 <b>${need.toFixed(1)}분</b>만 줄이면 요금을 회수합니다. 도입 후 처리 시간이 <b>${Math.max(0,v.minPerFax-need).toFixed(1)}분</b>까지 늘어나도 손해가 아닙니다.`
       : "";
   }
   ids.forEach(k=>$(k).addEventListener("input", calc));
